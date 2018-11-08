@@ -6,10 +6,10 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 	public static Connection getConnection() {
 		String driver = "org.postgresql.Driver";
-		String user = "postgres";/*Coloque o usu·rio criado para acesso ao banco*/
-		String senha = "785612";/*Coloque a senha para acesso ao banco*/
+		String user = "postgres";/*Coloque o usu√°rio criado para acesso ao banco*/
+		String senha = "";/*Coloque a senha para acesso ao banco*/
 		String url = "jdbc:postgresql://127.0.0.1:5432/aula12";/*Coloque o servidor 
-		onde est· instalado o banco*/
+		onde est√° instalado o banco*/
 		Connection con = null;
 
 		try {
