@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Trabalho 6</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h3>Buscar Aluno</h3>
+		<hr />
+		<p:panelGrid columns="2">
+		<p:outputLabel value="Matrícula:" />
+		<p:inputText id="matricula" size="10" value="#{alunoController.matricula}" />
+		<p:commandButton value="Buscar" action="#{alunoController.findAluno}" rendered="true" ajax="false"> </p:commandButton>
+		</p:panelGrid>
+		</h:form>
+		<br/>
+		
+		<p:panelGrid columns="2">
+		<p:outputLabel value="Matrícula:" />
+		<p:outputLabel value="#{alunoController.aluno.matricula}" />
+		<p:outputLabel value="Nome:" />
+		<p:outputLabel value="#{alunoController.aluno.nome}" />
+	    <p:outputLabel value="RA:" />
+	    <p:outputLabel value="#{alunoController.aluno.ra}" />
+		</p:panelGrid>
+		
+	<p:commandLink value="Voltar" action="index" />
+</h:body>
+</html>

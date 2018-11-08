@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Trabalho 6</title>
+</h:head>
+<h:body>
+	<h2>Lista de alunos cadastrados</h2>
+	<br />
+	<h:form>
+		<p:dataTable var="aluno" value="#{alunoController.alunos}">
+			<p:column headerText="Matrícula">
+				<h:outputText value="#{aluno.matricula}" />
+			</p:column>
+
+			<p:column headerText="Nome">
+				<h:outputText value="#{aluno.nome}" />
+			</p:column>
+
+			<p:column headerText="RA">
+				<h:outputText value="#{aluno.ra}" />
+			</p:column>
+			
+			<p:column headerText="Excluir">
+				<p:commandButton value="Excluir" action="#{alunoController.deleteAluno(aluno)}" rendered="true" ajax="false"></p:commandButton>
+			</p:column>
+			
+			<p:column headerText="Alterar">
+			<p:commandButton value="Alterar" action="#{alunoController.editaAluno(aluno)}"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+		<h:commandLink value="Voltar" action="index" />
+	</h:form>
+</h:body>
+</html>
